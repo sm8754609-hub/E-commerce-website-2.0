@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SK Watches - Luxury Timepieces | Pakistan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap">
+    <style>
+        :root {
+            --primary: #000000;
+            --secondary: #d4af37;
+            --accent: #8b0000;
+            --light: #f8f8f8;
+            --dark: #1a1a1a;
+            --gray: #777;
+            --white: #ffffff;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--white);
+            margin-left: 5px;
+        }
+
+        .logo-icon {
+            margin-right: 10px;
+            font-size: 28px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 18px;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+        }
+
+        nav ul li a i {
+            margin-right: 8px;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 10px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .btn-login {
+            background: transparent;
+            border: 1px solid var(--secondary);
+            color: var(--secondary);
+        }
+
+        .btn-signup {
+            background: var(--secondary);
+            border: 1px solid var(--secondary);
+            color: var(--primary);
+        }
+
+        .btn-login:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .btn-signup:hover {
+            background: #c19d2e;
+            transform: translateY(-2px);
+        }
+
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            color: var(--white);
+        }
+
+        .user-menu span {
+            margin-right: 10px;
+            font-weight: 500;
+        }
+
+        .user-menu .btn-logout {
+            background: transparent;
+            border: 1px solid var(--secondary);
+            color: var(--secondary);
+            padding: 8px 18px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .user-menu .btn-logout:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .cart-icon {
+            position: relative;
+            color: var(--white);
+            font-size: 22px;
+            transition: var(--transition);
+        }
+
+        .cart-icon:hover {
+            color: var(--secondary);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: var(--secondary);
+            color: var(--primary);
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 26px;
+            color: var(--white);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .hamburger:hover {
+            color: var(--secondary);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            height: 100vh;
+            background: var(--primary);
+            z-index: 1001;
+            transition: var(--transition);
+            padding: 80px 30px 30px;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            font-size: 24px;
+            color: var(--white);
+            cursor: pointer;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .mobile-menu ul li {
+            margin-bottom: 15px;
+        }
+
+        .mobile-menu ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-menu ul li a i {
+            margin-right: 15px;
+            font-size: 20px;
+            width: 25px;
+            text-align: center;
+        }
+
+        .mobile-auth {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Hero Slider */
+        .slider {
+            position: relative;
+            height: 700px;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.8s ease-in-out;
+            height: 100%;
+        }
+
+        .slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide-content {
+            position: absolute;
+            bottom: 120px;
+            left: 100px;
+            color: var(--white);
+            max-width: 600px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+
+        .slide-content h2 {
+            font-size: 52px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .slide-content p {
+            font-size: 18px;
+            margin-bottom: 35px;
+            line-height: 1.6;
+        }
+
+        .btn-shop {
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 14px 35px;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-shop:hover {
+            background: #c19d2e;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .slider-nav {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+        }
+
+        .slider-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .slider-dot.active {
+            background: var(--white);
+            transform: scale(1.2);
+        }
+
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 10;
+        }
+
+        .slider-arrow:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .slider-arrow.prev {
+            left: 30px;
+        }
+
+        .slider-arrow.next {
+            right: 30px;
+        }
+
+        /* Featured Products */
+        .featured-products {
+            max-width: 1400px;
+            margin: 100px auto;
+            padding: 0 30px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 36px;
+            font-weight: 600;
+            position: relative;
+            color: var(--dark);
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--secondary);
+            margin: 20px auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 35px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-img {
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.08);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: bold;
+            z-index: 2;
+        }
+
+        .product-badge.new {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .product-badge.sale {
+            background: #e74c3c;
+            color: var(--white);
+        }
+
+        .product-actions {
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-actions {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .product-action-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--white);
+            color: var(--dark);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-action-btn:hover {
+            background: var(--secondary);
+            color: var(--white);
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-name {
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .product-price {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .current-price {
+            font-size: 22px;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        .original-price {
+            font-size: 18px;
+            color: var(--gray);
+            text-decoration: line-through;
+        }
+
+        .product-description {
+            color: var(--gray);
+            font-size: 15px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .btn-add-to-cart {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 12px 20px;
+            width: 100%;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 15px;
+        }
+
+        .btn-add-to-cart:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
+
+        /* Categories */
+        .categories {
+            max-width: 1400px;
+            margin: 100px auto;
+            padding: 0 30px;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .category-card {
+            position: relative;
+            height: 250px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .category-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .category-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .category-name {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: var(--white);
+            padding: 20px;
+            text-align: center;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        /* About Section */
+        .about-section {
+            background: var(--primary);
+            color: var(--white);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            opacity: 0.2;
+        }
+
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-content h2 {
+            font-size: 42px;
+            margin-bottom: 25px;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        .about-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: bold;
+            color: var(--secondary);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: var(--white);
+        }
+
+        /* Services */
+        .services {
+            max-width: 1400px;
+            margin: 100px auto;
+            padding: 0 30px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 50px;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            font-size: 22px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .service-description {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: #111;
+            color: var(--white);
+            padding: 80px 0 30px;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+            color: var(--secondary);
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a {
+            color: #aaa;
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-column ul li a i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+            font-size: 18px;
+        }
+
+        .social-icons a:hover {
+            background: var(--secondary);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            margin-top: 60px;
+            border-top: 1px solid #333;
+            color: #aaa;
+            font-size: 15px;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1002;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: var(--white);
+            border-radius: 8px;
+            width: 100%;
+            max-width: 500px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: slideUp 0.4s ease;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--gray);
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            color: var(--dark);
+            transform: rotate(90deg);
+        }
+
+        .modal-title {
+            margin-bottom: 25px;
+            font-size: 28px;
+            text-align: center;
+            color: var(--primary);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--secondary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        /* Cart Styles */
+        .cart-items {
+            max-height: 350px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .cart-item-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .cart-item-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+
+        .cart-item-price {
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .quantity-btn {
+            background: #f0f0f0;
+            border: none;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .quantity-btn:hover {
+            background: var(--secondary);
+            color: var(--white);
+        }
+
+        .cart-item-remove {
+            color: #ff4d4d;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            transition: var(--transition);
+            padding: 5px;
+        }
+
+        .cart-item-remove:hover {
+            transform: scale(1.2);
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 25px 0;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        /* Order Success */
+        .order-success {
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .order-success i {
+            font-size: 70px;
+            color: #4CAF50;
+            margin-bottom: 25px;
+        }
+
+        .order-success h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-size: 26px;
+        }
+
+        .order-success p {
+            margin-bottom: 10px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .header-container, .featured-products, .categories, .about-container, .services, .footer-container {
+                max-width: 1140px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .header-container {
+                padding: 0 20px;
+            }
+            
+            nav {
+                display: none;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .slide-content {
+                left: 50px;
+                bottom: 80px;
+            }
+            
+            .slide-content h2 {
+                font-size: 42px;
+            }
+            
+            .about-container {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                margin-bottom: 40px;
+            }
+            
+            .slider {
+                height: 550px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .auth-buttons {
+                display: none;
+            }
+            
+            .user-menu span {
+                display: none;
+            }
+            
+            .slide-content {
+                left: 30px;
+                bottom: 60px;
+                max-width: 80%;
+            }
+            
+            .slide-content h2 {
+                font-size: 36px;
+            }
+            
+            .slide-content p {
+                font-size: 16px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .slider-arrow {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+            
+            .slider-arrow.prev {
+                left: 15px;
+            }
+            
+            .slider-arrow.next {
+                right: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .header-container {
+                padding: 0 15px;
+            }
+            
+            .logo {
+                font-size: 26px;
+            }
+            
+            .logo-icon {
+                font-size: 24px;
+            }
+            
+            .slide-content {
+                left: 20px;
+                bottom: 50px;
+            }
+            
+            .slide-content h2 {
+                font-size: 28px;
+            }
+            
+            .slide-content p {
+                font-size: 15px;
+                margin-bottom: 25px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .modal-content {
+                padding: 30px 20px;
+            }
+            
+            .about-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .slider {
+                height: 450px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-crown logo-icon"></i>
+                SK <span>WATCHES</span>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#"><i class="fas fa-th-large"></i> Collections</a></li>
+                    <li><a href="#"><i class="fas fa-male"></i> Men's</a></li>
+                    <li><a href="#"><i class="fas fa-female"></i> Women's</a></li>
+                    <li><a href="#"><i class="fas fa-gem"></i> Luxury</a></li>
+                    <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="#"><i class="fas fa-phone"></i> Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-right">
+                <div class="auth-buttons" id="auth-buttons">
+                    <button class="btn btn-login" id="login-btn">Login</button>
+                    <button class="btn btn-signup" id="signup-btn">Sign Up</button>
+                </div>
+                
+                <div class="user-menu" id="user-menu" style="display: none;">
+                    <span id="user-greeting">Hello, User!</span>
+                    <a href="#" class="cart-icon" id="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <button class="btn-logout" id="logout-btn">Logout</button>
+                </div>
+                
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-close" id="mobile-menu-close">
+            <i class="fas fa-times"></i>
+        </div>
+        <ul>
+            <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#"><i class="fas fa-th-large"></i> Collections</a></li>
+            <li><a href="#"><i class="fas fa-male"></i> Men's</a></li>
+            <li><a href="#"><i class="fas fa-female"></i> Women's</a></li>
+            <li><a href="#"><i class="fas fa-gem"></i> Luxury</a></li>
+            <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+            <li><a href="#"><i class="fas fa-phone"></i> Contact</a></li>
+        </ul>
+        
+        <div class="mobile-auth" id="mobile-auth">
+            <button class="btn btn-login" id="mobile-login-btn">Login</button>
+            <button class="btn btn-signup" id="mobile-signup-btn">Sign Up</button>
+        </div>
+        
+        <div class="user-menu mobile-user-menu" id="mobile-user-menu" style="display: none;">
+            <span id="mobile-user-greeting">Hello, User!</span>
+            <button class="btn-logout" id="mobile-logout-btn">Logout</button>
+        </div>
+    </div>
+    
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Hero Slider -->
+    <section class="slider">
+        <div class="slides">
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1547996160-81dfd9c4b1cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Luxury Watch">
+                <div class="slide-content">
+                    <h2>Timeless Elegance, Modern Precision</h2>
+                    <p>Discover our exclusive collection of luxury timepieces, crafted with precision and attention to detail for the discerning individual.</p>
+                    <button class="btn-shop">Explore Collection <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Diver Watch">
+                <div class="slide-content">
+                    <h2>Professional Diver Series</h2>
+                    <p>Built for adventure with water resistance up to 300m, luminous markers, and unidirectional bezel. Perfect for both diving and everyday wear.</p>
+                    <button class="btn-shop">Discover More <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1526045431048-f857369baa09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Chronograph Watch">
+                <div class="slide-content">
+                    <h2>SK Chronograph Masterpiece</h2>
+                    <p>Precision timing meets sophisticated design in our latest chronograph collection. Experience the perfect blend of form and function.</p>
+                    <button class="btn-shop">Shop Now <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slider-arrow prev" id="prev-slide">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="slider-arrow next" id="next-slide">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+        
+        <div class="slider-nav">
+            <div class="slider-dot active"></div>
+            <div class="slider-dot"></div>
+            <div class="slider-dot"></div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <h2 class="section-title">Featured Timepieces</h2>
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1399&q=80" alt="SK Classic">
+                    <div class="product-badge">Bestseller</div>
+                    <div class="product-actions">
+                        <button class="product-action-btn"><i class="far fa-heart"></i></button>
+                        <button class="product-action-btn"><i class="fas fa-search"></i></button>
+                        <button class="product-action-btn"><i class="fas fa-share-alt"></i></button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">SK Classic Automatic</h3>
+                    <div class="product-price">
+                        <span class="current-price">Rs. 285,000</span>
+                    </div>
+                    <p class="product-description">A timeless automatic watch with sapphire crystal, genuine leather strap, and 42-hour power reserve.</p>
+                    <button class="btn-add-to-cart" data-id="1" data-name="SK Classic Automatic" data-price="285000">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1539874754764-5a96559165b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1410&q=80" alt="SK Diver">
+                    <div class="product-badge new">New</div>
+                    <div class="product-actions">
+                        <button class="product-action-btn"><i class="far fa-heart"></i></button>
+                        <button class="product-action-btn"><i class="fas fa-search"></i></button>
+                        <button class="product-action-btn"><i class="fas fa-share-alt"></i></button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">SK Diver Pro 300</h3>
+                    <div class="product-price">
+                        <span class="current-price">Rs. 320,000</span>
+                    </div>
+                    <p class="product-description">Professional diving watch with 300m water resistance, ceramic bezel, and luminous markers.</p>
+                    <button class="btn-add-to-cart" data-id="2" data-name="SK Diver Pro 300" data-price="320000">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="SK Chrono">
+                    <div class="product-actions">
+                        <button class="product-action-btn"><i class="far fa-heart"></i></button>
+                        <button class="product-action-btn"><i class="fas fa-search"></i></button>
+                        <button class="product-action-btn"><i class="fas fa-share-alt"></i></button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">SK Chronograph</h3>
+                    <div class="product-price">
+                        <span class="current-price">Rs. 415,000</span>
+                    </div>
+                    <p class="product-description">Precision chronograph with tachymeter, date function, and 48-hour power reserve.</p>
+                    <button class="btn-add-to-cart" data-id="3" data-name="SK Chronograph" data-price="415000">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="SK Heritage">
+                    <div class="product-badge">Limited</div>
+                    <div class="product-actions">
+                        <button class="product-action-btn"><i class="far fa-heart"></i></button>
+                        <button class="product-action-btn"><i class="fas fa-search"></i></button>
+                        <button class="product-action-btn"><i class="fas fa-share-alt"></i></button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">SK Heritage 1945</h3>
+                    <div class="product-price">
+                        <span class="current-price">Rs. 540,000</span>
+                        <span class="original-price">Rs. 600,000</span>
+                    </div>
+                    <p class="product-description">Limited edition timepiece inspired by our 1945 classic design with manual winding movement.</p>
+                    <button class="btn-add-to-cart" data-id="4" data-name="SK Heritage 1945" data-price="540000">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Product 5 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1551816230-ef5deaed4a26?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80" alt="SK Sports">
+                    <div class="product-badge sale">Sale</div>
+                    <div class="product-actions">
+                        <button class="product-action-btn"><i class="far fa-heart"></i></button>
+                        <button class="product-action-btn"><i class="fas fa-search"></i></button>
+                        <button class="product-action-btn"><i class="fas fa-share-alt"></i></button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">SK Sports Edition</h3>
+                    <div class="product-price">
+                        <span class="current-price">Rs. 275,000</span>
+                        <span class="original-price">Rs. 325,000</span>
+                    </div>
+                    <p class="product-description">Rugged sports watch with chronograph, tachymeter, and 100m water resistance.</p>
+                    <button class="btn-add-to-cart" data-id="5" data-name="SK Sports Edition" data-price="275000">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Product 6 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1594576722512-582bcd46fba3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1350&q=80" alt="SK Elegance">
+                    <div class="product-actions">
+                        <button class="product-action-btn"><i class="far fa-heart"></i></button>
+                        <button class="product-action-btn"><i class="fas fa-search"></i></button>
+                        <button class="product-action-btn"><i class="fas fa-share-alt"></i></button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">SK Elegance Gold</h3>
+                    <div class="product-price">
+                        <span class="current-price">Rs. 680,000</span>
+                    </div>
+                    <p class="product-description">Elegant gold-plated watch with diamond markers and mother of pearl dial.</p>
+                    <button class="btn-add-to-cart" data-id="6" data-name="SK Elegance Gold" data-price="680000">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Product 7 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1547996160-81dfd9c4b1cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="SK Aviation">
+                    <div class="product-badge new">New</div>
+                    <div class="product-actions">
+                        <button class="product-action-btn"><i class="far fa-heart"></i></button>
+                        <button class="product-action-btn"><i class="fas fa-search"></i></button>
+                        <button class="product-action-btn"><i class="fas fa-share-alt"></i></button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">SK Aviation GMT</h3>
+                    <div class="product-price">
+                        <span class="current-price">Rs. 495,000</span>
+                    </div>
+                    <p class="product-description">Pilot's watch with GMT function, rotating bezel, and 200m water resistance.</p>
+                    <button class="btn-add-to-cart" data-id="7" data-name="SK Aviation GMT" data-price="495000">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Product 8 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1568619932778-96d3e5276e7f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1350&q=80" alt="SK Royal">
+                    <div class="product-badge">Limited</div>
+                    <div class="product-actions">
+                        <button class="product-action-btn"><i class="far fa-heart"></i></button>
+                        <button class="product-action-btn"><i class="fas fa-search"></i></button>
+                        <button class="product-action-btn"><i class="fas fa-share-alt"></i></button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">SK Royal Edition</h3>
+                    <div class="product-price">
+                        <span class="current-price">Rs. 850,000</span>
+                    </div>
+                    <p class="product-description">Exclusive limited edition with skeleton dial, rose gold case, and alligator strap.</p>
+                    <button class="btn-add-to-cart" data-id="8" data-name="SK Royal Edition" data-price="850000">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <h2 class="section-title">Watch Categories</h2>
+        <div class="categories-grid">
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Men's Watches">
+                <div class="category-name">Men's Collection</div>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1594576722512-582bcd46fba3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1350&q=80" alt="Women's Watches">
+                <div class="category-name">Women's Collection</div>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Luxury Watches">
+                <div class="category-name">Luxury Edition</div>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1533139502658-0198f920d8e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1350&q=80" alt="Sports Watches">
+                <div class="category-name">Sports Collection</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3 class="service-title">2-Year Warranty</h3>
+                <p class="service-description">All our watches come with a comprehensive 2-year international warranty for your peace of mind.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3 class="service-title">Professional Service</h3>
+                <p class="service-description">Our certified watchmakers provide expert maintenance and repair services for your timepieces.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-shipping-fast"></i>
+                </div>
+                <h3 class="service-title">Free Shipping</h3>
+                <p class="service-description">We offer free insured shipping across Pakistan with careful packaging and fast delivery.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-exchange-alt"></i>
+                </div>
+                <h3 class="service-title">Easy Returns</h3>
+                <p class="service-description">Not satisfied? We offer a 14-day return policy with no questions asked.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1568619932778-96d3e5276e7f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1350&q=80" alt="SK Watches Craftsmanship">
+            </div>
+            <div class="about-content">
+                <h2>Craftsmanship Since 1920</h2>
+                <p>SK Watches has been creating exceptional timepieces for over a century. Our dedication to precision, quality materials, and timeless design has made us a leader in luxury watchmaking across Pakistan and beyond.</p>
+                <p>Each SK watch is meticulously crafted by our master watchmakers, combining traditional techniques with innovative technology to create heirlooms that will last for generations. From our state-of-the-art manufacturing facilities to our rigorous quality control, every detail is carefully considered to ensure that an SK watch exceeds expectations.</p>
+                <p>We take pride in our Pakistani heritage while embracing global standards of excellence. Our watches are not just timekeeping instruments but expressions of artistry, precision, and enduring value.</p>
+                
+                <div class="about-stats">
+                    <div class="stat">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Years of Excellence</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">50K+</div>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">15</div>
+                        <div class="stat-label">Stores in Pakistan</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>SK Watches</h3>
+                <p>Creating exceptional timepieces since 1920. Our commitment to craftsmanship and innovation defines every watch we create.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Shop</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Men's Watches</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Women's Watches</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> New Arrivals</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Best Sellers</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Limited Editions</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Shipping Information</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Returns & Exchanges</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Warranty</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Watch Care</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Store Locations</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Dolmen Mall, Karachi</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Packages Mall, Lahore</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Centaurus, Islamabad</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Giga Mall, Islamabad</a></li>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Lucky One, Karachi</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 SK Watches. All rights reserved. | Crafted with precision in Pakistan</p>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-login">&times;</span>
+            <h2 class="modal-title">Login to Your Account</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email Address</label>
+                    <input type="email" id="login-email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" class="form-control" required>
+                </div>
+                <button type="submit" class="btn-shop" style="width: 100%;">Login</button>
+            </form>
+            <p style="text-align: center; margin-top: 15px;">Don't have an account? <a href="#" id="switch-to-signup" style="color: var(--secondary);">Sign up</a></p>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal" id="signup-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-signup">&times;</span>
+            <h2 class="modal-title">Create an Account</h2>
+            <form id="signup-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email Address</label>
+                    <input type="email" id="signup-email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" class="form-control" placeholder="03XX-XXXXXXX" required>
+                </div>
+                <button type="submit" class="btn-shop" style="width: 100%;">Create Account</button>
+            </form>
+            <p style="text-align: center; margin-top: 15px;">Already have an account? <a href="#" id="switch-to-login" style="color: var(--secondary);">Login</a></p>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cart-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-cart">&times;</span>
+            <h2 class="modal-title">Your Shopping Cart</h2>
+            <div class="cart-items" id="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total">Rs. 0</span>
+            </div>
+            <button class="btn-shop" id="checkout-btn" style="width: 100%;">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkout-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-checkout">&times;</span>
+            <h2 class="modal-title">Checkout</h2>
+            <form id="checkout-form">
+                <div class="form-group">
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone-checkout">Phone Number</label>
+                    <input type="tel" id="phone-checkout" class="form-control" placeholder="03XX-XXXXXXX" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Delivery Address</label>
+                    <textarea id="address" class="form-control" rows="3" required></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <select id="city" class="form-control" required>
+                            <option value="">Select City</option>
+                            <option value="karachi">Karachi</option>
+                            <option value="lahore">Lahore</option>
+                            <option value="islamabad">Islamabad</option>
+                            <option value="rawalpindi">Rawalpindi</option>
+                            <option value="faisalabad">Faisalabad</option>
+                            <option value="multan">Multan</option>
+                            <option value="peshawar">Peshawar</option>
+                            <option value="quetta">Quetta</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="postal-code">Postal Code</label>
+                        <input type="text" id="postal-code" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="payment-method">Payment Method</label>
+                    <select id="payment-method" class="form-control" required>
+                        <option value="">Select Payment Method</option>
+                        <option value="cash">Cash on Delivery</option>
+                        <option value="card">Credit/Debit Card</option>
+                        <option value="bank">Bank Transfer</option>
+                    </select>
+                </div>
+                <div class="cart-total">
+                    <span>Total Amount:</span>
+                    <span id="checkout-total">Rs. 0</span>
+                </div>
+                <button type="submit" class="btn-shop" style="width: 100%;">Place Order</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Order Success Modal -->
+    <div class="modal" id="order-success-modal">
+        <div class="modal-content">
+            <div class="order-success">
+                <i class="fas fa-check-circle"></i>
+                <h3>Order Placed Successfully!</h3>
+                <p>Thank you for your purchase. Your order has been confirmed and will be delivered within 3-5 business days.</p>
+                <p>Order ID: <strong id="order-id">SK-2023-001</strong></p>
+                <button class="btn-shop" id="continue-shopping">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // DOM Elements
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const overlay = document.getElementById('overlay');
+        const loginBtn = document.getElementById('login-btn');
+        const signupBtn = document.getElementById('signup-btn');
+        const mobileLoginBtn = document.getElementById('mobile-login-btn');
+        const mobileSignupBtn = document.getElementById('mobile-signup-btn');
+        const authButtons = document.getElementById('auth-buttons');
+        const mobileAuth = document.getElementById('mobile-auth');
+        const userMenu = document.getElementById('user-menu');
+        const mobileUserMenu = document.getElementById('mobile-user-menu');
+        const userGreeting = document.getElementById('user-greeting');
+        const mobileUserGreeting = document.getElementById('mobile-user-greeting');
+        const logoutBtn = document.getElementById('logout-btn');
+        const mobileLogoutBtn = document.getElementById('mobile-logout-btn');
+        const cartIcon = document.getElementById('cart-icon');
+        const cartCount = document.querySelector('.cart-count');
+        const addToCartBtns = document.querySelectorAll('.btn-add-to-cart');
+        const loginModal = document.getElementById('login-modal');
+        const signupModal = document.getElementById('signup-modal');
+        const cartModal = document.getElementById('cart-modal');
+        const checkoutModal = document.getElementById('checkout-modal');
+        const orderSuccessModal = document.getElementById('order-success-modal');
+        const closeLogin = document.getElementById('close-login');
+        const closeSignup = document.getElementById('close-signup');
+        const closeCart = document.getElementById('close-cart');
+        const closeCheckout = document.getElementById('close-checkout');
+        const switchToSignup = document.getElementById('switch-to-signup');
+        const switchToLogin = document.getElementById('switch-to-login');
+        const loginForm = document.getElementById('login-form');
+        const signupForm = document.getElementById('signup-form');
+        const checkoutBtn = document.getElementById('checkout-btn');
+        const checkoutForm = document.getElementById('checkout-form');
+        const cartItems = document.getElementById('cart-items')
